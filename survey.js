@@ -18,14 +18,13 @@ let r1 = readline.createInterface({
 });
 
 const askQuestion = answer => {
+  answers.push(answer);  
   if(i === questions.length - 1){
-    answers.push(answer);  
     console.log(`${answers[0]} loves listening to ${answers[2]} while ${answers[1]}, devouring ${answers[4]} for ${answers[3]}, prefers ${answers[5]} over any other sport, and is amazing at ${answers[6]}.`);
     r1.close();
-  } else{
-  answers.push(answer);
-  i++;
-  r1.question(questions[i], askQuestion);
+  } else {
+    i++;
+    r1.question(questions[i], askQuestion);
   }
 }
 
